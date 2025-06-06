@@ -1,5 +1,3 @@
-# modern-python-repo
-
 # 🧱 Python Project Template
 
 A modern Python project scaffold with:
