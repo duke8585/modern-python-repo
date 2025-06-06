@@ -1,6 +1,8 @@
 # TODOs
 
-# [ ] gh action and README update
+## gh actions automation for PRs
+
+- [ ] gh action and README update
 
 ## README
 
