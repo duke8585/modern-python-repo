@@ -1,0 +1,27 @@
+[project]
+name = "my_project"
+version = "0.1.0"
+dependencies = [
+    "pandas",
+    "numpy",
+    "requests"
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff",
+    "pre-commit",
+    "pytest"
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = ["E", "F", "I"]
+ignore = ["E501"]
+src = ["src"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
