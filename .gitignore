@@ -1,5 +1,48 @@
-src/my_project.egg-info/dependency_links.txt
-src/my_project.egg-info/PKG-INFO
-src/my_project.egg-info/requires.txt
-src/my_project.egg-info/SOURCES.txt
-src/my_project.egg-info/top_level.txt
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Type checking
+.mypy_cache/
+.pyright/
+.pytype/
+.dmypy.json
+dmypy.json
+
+# Linting
+.ruff_cache/
+
+# IDEs
+.idea/
+*.swp
+*.swo
+*~
+# Keep .vscode/settings.json for shared project config
+# But ignore personal workspace files
+.vscode/launch.json
+.vscode/*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db

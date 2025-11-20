@@ -1,16 +1,47 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#70a3cc",
-        "activityBar.background": "#70a3cc",
-        "activityBar.foreground": "#15202b",
-        "activityBar.inactiveForeground": "#15202b99",
-        "activityBarBadge.background": "#a43b75",
-        "activityBarBadge.foreground": "#e7e7e7",
-        "commandCenter.border": "#e7e7e799",
-        "titleBar.activeBackground": "#4b8bbe",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#4b8bbe99",
-        "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    "peacock.color": "4B8BBE"
+  // Python configuration
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+
+  // Type checking (Pylance uses pyright)
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.diagnosticMode": "workspace",
+
+  // Linting with Ruff
+  "ruff.enable": true,
+  "ruff.lint.run": "onSave",
+  "ruff.format.args": [],
+
+  // Format on save
+  "editor.formatOnSave": true,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+
+  // Testing
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestArgs": [
+    "tests",
+    "--strict-markers",
+    "--tb=short",
+    "-vv"
+  ],
+
+  // File associations
+  "files.associations": {
+    "*.md": "markdown"
+  },
+
+  // Exclude common directories from search
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "**/.pytest_cache": true,
+    "**/.mypy_cache": true,
+    "**/.ruff_cache": true
+  }
 }
