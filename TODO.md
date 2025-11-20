@@ -27,6 +27,7 @@ Once you've pushed this repository to GitHub, follow these steps to enable enfor
 
 This ensures that:
 - All pre-commit hooks pass (linting, formatting, local checks)
+- Type checking passes (pyright in strict mode)
 - All tests pass
 - The branch is in sync with `main` before merge
 
@@ -67,14 +68,15 @@ jobs:
 
       - name: Set up virtualenv and install deps
         run: |
-          make install
+          make venv
+          make init
 
       - name: Run pre-commit hooks
         run: |
-          pip install pre-commit
-          pre-commit run --all-files
+          .venv/bin/pre-commit install
+          .venv/bin/pre-commit run --all-files
 
-      - name: Run tests
+      - name: Run tests with type checking
         run: |
           make test
 
