@@ -4,20 +4,26 @@ version = "0.1.0"
 dependencies = [
     "pandas",
     "numpy",
-    "requests"
+    "requests",
+    "pydantic>=2.0",
+    "beartype>=0.15.0"
 ]
 
 [project.optional-dependencies]
 dev = [
     "ruff",
     "pre-commit",
-    "pytest"
+    "pytest",
+    "pyright",
+    "polars",
+    "httpx",
+    "msgspec"
 ]
 
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-select = ["E", "F", "I"]
+select = ["E", "F", "B", "UP", "I", "N", "S", "A", "C4", "PIE", "PT", "RET", "SIM", "TID"]
 ignore = ["E501"]
 src = ["src"]
 
@@ -25,3 +31,16 @@ src = ["src"]
 quote-style = "double"
 indent-style = "space"
 line-ending = "lf"
+
+[tool.pyright]
+typeCheckingMode = "strict"
+reportMissingTypeStubs = false
+reportUnknownMemberType = "error"
+reportUnknownArgumentType = "error"
+reportUnnecessaryTypeIgnoreComment = "error"
+pythonVersion = "3.11"
+include = ["src", "tests"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers --tb=short -vv"
+testpaths = ["tests"]
